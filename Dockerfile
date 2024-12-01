@@ -21,8 +21,8 @@ RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 
 USER nextjs
 
-ENV PORT=80
-EXPOSE 80
+ENV PORT=3000
+EXPOSE 3000
 
 CMD [ "npm", "run", "start"]
 # , "--", "-H", "0.0.0.0", "-p", "80" ]
