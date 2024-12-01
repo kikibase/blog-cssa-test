@@ -1,7 +1,7 @@
-FROM node:18-alpine AS base
+FROM node:18-alpine 
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
-FROM base AS builder
+
 RUN apk update && apk upgrade && \
     apk add --no-cache git
 RUN mkdir -p /usr/src/app
@@ -13,7 +13,7 @@ RUN npm ci
 RUN npm run build
 
 
-FROM base AS runner
+
 WORKDIR /usr/src/app
 ENV NODE_ENV=production
 
