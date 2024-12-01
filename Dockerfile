@@ -8,10 +8,17 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY ./ /usr/src/app/
-RUN npm install --production && npm cache clean --force
+RUN npm ci
+#run --production && npm cache clean --force
 #COPY ./ /usr/src/app
 RUN npm run build
-#ENV NODE_ENV production
+ENV NODE_ENV=production
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+USER nextjs
+
 ENV PORT 80
 EXPOSE 80
 
