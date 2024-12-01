@@ -19,7 +19,13 @@ RUN adduser --system --uid 1001 nextjs
 
 USER nextjs
 
-ENV PORT 80
+ENV PORT=80
 EXPOSE 80
 
-CMD [ "npm", "run", "start", "--", "-H", "0.0.0.0", "-p", "80" ]
+#CMD [ "npm", "run", "start", "--", "-H", "0.0.0.0", "-p", "80" ]
+
+
+# server.js is created by next build from the standalone output
+# https://nextjs.org/docs/pages/api-reference/next-config-js/output
+ENV HOSTNAME="0.0.0.0"
+CMD ["node", "server.js"]
