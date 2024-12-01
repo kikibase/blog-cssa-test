@@ -22,4 +22,4 @@ USER nextjs
 ENV PORT 80
 EXPOSE 80
 
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "start", "-H", "0.0.0.0", "-p", "80" ]
