@@ -1,4 +1,4 @@
-# FROM node:14-alpine
+FROM node:14-alpine
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 
 
